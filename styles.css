@@ -17,6 +17,94 @@ body {
   flex-direction: column;
 }
 
+/* Inicio Modo Oscuro */
+/* Modo oscuro: se aplica cuando la clase .dark-mode está en el body */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.dark-mode .navbar .nav-link {
+  color: #e0e0e0;
+}
+
+body.dark-mode .navbar .nav-link:hover {
+  color: #ffffff;
+}
+
+/* Secciones en modo oscuro */
+body.dark-mode .bg-light {
+  background-color: #7a7777 !important;
+}
+
+/* Botones en modo oscuro */
+body.dark-mode .btn-secondary {
+  background-color: #4a4a4a;
+  color: #e0e0e0;
+}
+
+body.dark-mode .btn-secondary:hover {
+  background-color: #5a5a5a;
+}
+
+/* Video overlay en modo oscuro */
+body.dark-mode .video-overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .video-title-video {
+  color: #ffffff;
+}
+
+/* Cards en modo oscuro */
+body.dark-mode .card {
+  background-color: #868484;
+  color: #e0e0e0;
+}
+
+body.dark-mode .section-title-youtube {
+  color: #000 !important;
+}
+
+body.dark-mode .benefit-card {
+  background-color: #868484;
+}
+
+body.dark-mode .benefit-text {
+  color: #ede9e9;
+}
+
+/* Formularios en modo oscuro */
+body.dark-mode .form-control {
+  background-color: #ada9a9;
+  color: #e0e0e0;
+  border-color: #4a4a4a;
+}
+
+body.dark-mode .form-control:focus {
+  background-color: #dad6d6;
+  color: #e0e0e0;
+  border-color: #6c757d;
+  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.25);
+}
+
+body.dark-mode .form-label {
+  color: #e0e0e0;
+}
+
+/* Otros elementos personalizados */
+body.dark-mode .section-title-about,
+body.dark-mode .section-title-latest,
+body.dark-mode .section-title-youtube {
+  color: #ffffff;
+}
+
+body.dark-mode .section-description {
+  color: #d0d0d0;
+}
+
+/* Fin Modo Oscuro */
+
 .navbar {
   background: linear-gradient(
     to right,
@@ -75,33 +163,6 @@ body {
 
 .dropdown-item:hover {
   background-color: var(--primary-light);
-  color: var(--blanco);
-}
-
-/* Modo oscuro */
-body.dark-mode .navbar {
-  background: linear-gradient(
-    to right,
-    var(--primary-dark),
-    var(--accent-dark)
-  ) !important;
-}
-
-body.dark-mode .navbar-nav .nav-link {
-  color: #f8f9fa !important;
-}
-
-body.dark-mode .dropdown-menu {
-  background-color: var(--neutral-dark);
-  border-color: var(--primary-dark);
-}
-
-body.dark-mode .dropdown-item {
-  color: var(--neutral-light);
-}
-
-body.dark-mode .dropdown-item:hover {
-  background-color: var(--primary-dark);
   color: var(--blanco);
 }
 
@@ -505,18 +566,6 @@ body.dark-mode .dropdown-item:hover {
   transform: scale(1.05);
 }
 
-body.dark-mode .section-title-latest {
-  color: var(--accent-light);
-}
-
-body.dark-mode .section-subtitle {
-  color: var(--primary-light);
-}
-
-body.dark-mode .section-description {
-  color: var(--neutral-light);
-}
-
 /* Tablet Styles */
 @media (min-width: 577px) and (max-width: 991px) {
   #latest-video .container {
@@ -555,7 +604,6 @@ body.dark-mode .section-description {
   .section-title-latest {
     font-size: 1.75rem;
     text-align: center;
-    margin-top: 2rem;
   }
   .section-subtitle {
     font-size: 1.25rem;
@@ -668,16 +716,6 @@ body.dark-mode .section-description {
   margin-top: 1rem;
 }
 
-body.dark-mode .playlist-card {
-  background: var(--neutral-dark);
-}
-
-body.dark-mode .card-title-playlist,
-body.dark-mode .video-stats-playlist,
-body.dark-mode .card-link-playlist {
-  color: var(--accent-light);
-}
-
 /* Tablet Styles */
 @media (min-width: 577px) and (max-width: 991px) {
   .playlist-card {
@@ -744,19 +782,33 @@ body.dark-mode .card-link-playlist {
   .video-stats-playlist {
     font-size: 0.75rem;
   }
+
+  .card-body {
+    padding: 0.5em !important;
+  }
+
+  #playlist {
+    padding: 0 !important;
+  }
 }
 
 /* Estilos para CommunitySection */
 
 .youtube-community-section {
   background-color: var(--neutral-light);
-  padding: 5rem 0;
 }
 
 .youtube-icon-hero {
   color: #ff0000;
   font-size: 5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-contact.mobile-view {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .section-title-youtube {
@@ -777,7 +829,7 @@ body.dark-mode .card-link-playlist {
   background-color: var(--blanco);
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .youtube-description {
@@ -892,27 +944,6 @@ body.dark-mode .card-link-playlist {
   box-shadow: 0 6px 15px rgba(255, 0, 0, 0.4);
 }
 
-/* Modo oscuro */
-body.dark-mode .youtube-community-section {
-  background-color: var(--neutral-dark);
-}
-
-body.dark-mode .youtube-card {
-  background-color: #444;
-}
-
-body.dark-mode .section-title-youtube,
-body.dark-mode .target-count,
-body.dark-mode .counter-label,
-body.dark-mode .youtube-description,
-body.dark-mode .benefit-text {
-  color: var(--neutral-light);
-}
-
-body.dark-mode .benefit-card {
-  background-color: #555;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   .youtube-icon-hero {
@@ -940,9 +971,6 @@ body.dark-mode .benefit-card {
 }
 
 @media (max-width: 576px) {
-  .youtube-community-section {
-    padding: 3rem 0;
-  }
   .section-title-youtube {
     font-size: 1.5rem;
   }
@@ -964,6 +992,30 @@ body.dark-mode .benefit-card {
   .mobile-view {
     position: relative;
     display: column;
+    margin: 0.5em 0 !important;
+  }
+
+  .mobile-row {
+    margin: 0 !important;
+  }
+
+  .youtube-icon-hero {
+    font-size: 3rem; /* Reduce un poco el tamaño del ícono */
+  }
+
+  .row > * {
+    margin-top: 0;
+  }
+
+  .btn-contact.mobile-view {
+    position: static; /* Quita position absolute */
+    transform: none; /* Elimina la transformación */
+    margin-top: 10px; /* Añade espacio arriba */
+  }
+
+  .playlist-card.d-flex {
+    flex-direction: column; /* Cambia a columna en lugar de fila */
+    align-items: center;
   }
 }
 /* Estilos para ContactFormSection */
@@ -1012,18 +1064,6 @@ body.dark-mode .benefit-card {
   color: var(--neutral-dark);
 }
 
-body.dark-mode .text-center-contact,
-body.dark-mode .form-label,
-body.dark-mode .social-share p {
-  color: var(--neutral-light);
-}
-
-body.dark-mode .form-control {
-  background-color: #555;
-  color: var(--neutral-light);
-  border-color: #666;
-}
-
 /* Responsive */
 @media (max-width: 576px) {
   .text-center-contact {
@@ -1039,6 +1079,12 @@ body.dark-mode .form-control {
   }
   .d-flex.justify-content-end {
     justify-content: center !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .btn-outline-contact {
+    padding: 0.25rem 0.5rem;
   }
 }
 
@@ -1136,15 +1182,6 @@ body.dark-mode .form-control {
   color: var(--blanco);
   background-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-3px);
-}
-
-/* Modo oscuro (ya está soportado por las variables) */
-body.dark-mode .footer {
-  background: linear-gradient(
-    to right,
-    var(--primary-dark),
-    var(--accent-dark)
-  ) !important;
 }
 
 /* Responsive */
